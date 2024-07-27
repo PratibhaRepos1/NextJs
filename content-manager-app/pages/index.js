@@ -1,48 +1,29 @@
+import Layout from "@/components/Layout";
+import ResourceHightlight from "@/components/ResourceHighlight";
+import Newsletter from "@/components/Newsletter";
+import ResourceList from "@/components/ResourceList";
+import Footer from "@/components/Footer";
 
-import React from "react";
-function CompA() {
-  return (
-    <>
-      <h1>CompA</h1>
-      <p>Hello CompA</p>
-      <CompB />
-    </>
-    
-  )
-}
+import { resources } from "@/api/data";
 
-function CompB() {
+function Home() {
   return(
-    <>
-      <h1>CompB</h1>
-      <p>Hello CompB</p>
-    </>
+   <>  
+
+    <Layout >
+    <ResourceHightlight
+    resources = {resources}
+    />
+
+    <Newsletter />
+    <ResourceList
+    resources = {resources} />
     
-  )
-}
-//JSX
+     <Footer />
+     </Layout>
 
-class CompC extends React.Component {
-
-  render() {
-    return (
-      <h1>CompC</h1>
-    )
-
-  }
-}
-
-const  HomePage = () => {
-  return (
-  <>
-     <h1>Hello World!</h1>
-     <CompA />
-    <CompC></CompC>
-
-  </>
-    
-   
+   </>
   )
 }
 
-export default HomePage;
+export default Home;
